@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Octopus Ship - Luxury Yacht Adventures</title>
+     <link rel="stylesheet" href="./css/style.css">
+     <link rel="shortcut icon" href="./images/ChatGPT Image Jun 24, 2025, 11_35_22 PM (1).png" type="image/x-icon">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <style>
+          /* Additional styles for video elements */
+          .video-item {
+               position: relative;
+               overflow: hidden;
+               border-radius: 8px;
+               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+               transition: transform 0.3s ease;
+          }
+
+          .video-item:hover {
+               transform: translateY(-5px);
+          }
+
+          .video-item video {
+               width: 100%;
+               height: 200px;
+               object-fit: cover;
+               border-radius: 8px;
+          }
+
+          .video-overlay {
+               position: absolute;
+               top: 0;
+               left: 0;
+               right: 0;
+               bottom: 0;
+               background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+               display: flex;
+               align-items: flex-end;
+               padding: 15px;
+               opacity: 0;
+               transition: opacity 0.3s ease;
+               border-radius: 8px;
+          }
+
+          .video-item:hover .video-overlay {
+               opacity: 1;
+          }
+
+          .video-title {
+               color: white;
+               font-weight: 600;
+               font-size: 14px;
+          }
+
+          .play-button {
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               background: rgba(255, 255, 255, 0.9);
+               border: none;
+               border-radius: 50%;
+               width: 60px;
+               height: 60px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               cursor: pointer;
+               transition: all 0.3s ease;
+               font-size: 20px;
+               color: #333;
+          }
+
+          .play-button:hover {
+               background: white;
+               transform: translate(-50%, -50%) scale(1.1);
+          }
+
+          /* Lightbox video styles */
+          .lightbox-video {
+               max-width: 90%;
+               max-height: 80%;
+               border-radius: 8px;
+          }
+     </style>
+</head>
+
+<body>
+     <header id="navbar" class="navbar">
+          <div class="container">
+               <div class="logo">
+                    <i class="fas fa-anchor"></i>
+                    <span>Octopus Ship</span>
+               </div>
+               <nav class="nav-links">
+                    <a href="#home" data-lang-key="nav.home">Home</a>
+                    <a href="#about" data-lang-key="nav.about">About Yacht</a>
+                    <a href="#gallery" data-lang-key="nav.gallery">Gallery</a>
+                    <a href="#trips" data-lang-key="nav.trips">Trips</a>
+                    <a href="#contact" data-lang-key="nav.contact">Contact</a>
+                    <div class="language-switcher">
+                         <button class="lang-button" data-lang="en">English</button>
+                         <div class="lang-dropdown">
+                              <a href="#" data-lang="ar">العربية</a>
+                              <a href="#" data-lang="en">English</a>
+                              <a href="#" data-lang="es">Español</a>
+                              <a href="#" data-lang="fr">Français</a>
+                              <a href="#" data-lang="it">Italiano</a>
+                         </div>
+                    </div>
+               </nav>
+               <div class="mobile-menu-icon">
+                    <i class="fas fa-bars"></i>
+               </div>
+          </div>
+     </header>
+
+     <main>
+          <!-- Hero Section -->
+          <section id="home" class="hero-section">
+               <div class="hero-content">
+                    <h1 data-lang-key="hero.title">Discover the Red Sea World</h1>
+                    <h2 data-lang-key="hero.subtitle">With Octopus Luxury Yacht</h2>
+                    <p data-lang-key="hero.description">Embark on an unforgettable adventure with luxury diving trips in
+                         the
+                         depths of the Red Sea</p>
+                    <a href="https://wa.me/201282256562" target="_blank"> <button class="cta-button">Book Your Trip by
+                              whatsapp</button></a>
+               </div>
+          </section>
+
+          <!-- About Section -->
+          <section id="about" class="about-section">
+               <div class="container">
+                    <h2 class="section-title" data-lang-key="yacht.title">Octopus Yacht</h2>
+                    <p class="section-subtitle" data-lang-key="yacht.subtitle">Where Luxury Meets Adventure</p>
+                    <div class="about-content">
+                         <div class="about-image">
+                              <img src="images/IMG-20250604-WA0176.jpg" alt="Octopus Yacht Exterior">
+                              <div class="luxury-rating">5★<br>Luxury Rating</div>
+                         </div>
+                         <div class="about-text">
+                              <p data-lang-key="yacht.description">5-star luxury yacht with 5 decks, equipped with the
+                                   latest
+                                   technology to ensure your comfort and safety</p>
+                              <div class="features-grid">
+                                   <div class="feature-item">
+                                        <i class="fas fa-star"></i>
+                                        <h3 data-lang-key="yacht.features.luxury">Exceptional Luxury</h3>
+                                   </div>
+                                   <div class="feature-item">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <h3 data-lang-key="yacht.features.safety">Safety & Security</h3>
+                                   </div>
+                                   <div class="feature-item">
+                                        <i class="fas fa-compass"></i>
+                                        <h3 data-lang-key="yacht.features.comfort">Ultimate Comfort</h3>
+                                   </div>
+                                   <div class="feature-item">
+                                        <i class="fas fa-water"></i>
+                                        <h3 data-lang-key="yacht.features.adventure">Thrilling Adventure</h3>
+                                   </div>
+                              </div>
+                              <div class="specifications">
+                                   <h3>Yacht Specifications</h3>
+                                   <div class="spec-grid">
+                                        <div>
+                                             <div class="spec-value">5</div>
+                                             <div class="spec-label">Decks</div>
+                                        </div>
+                                        <div>
+                                             <div class="spec-value">5★</div>
+                                             <div class="spec-label">Rating</div>
+                                        </div>
+                                        <div>
+                                             <div class="spec-value">24/7</div>
+                                             <div class="spec-label">Service</div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </section>
+
+
+          <!-- Gallery Section -->
+          <section id="gallery" class="gallery-section">
+               <div class="container">
+                    <h2 class="section-title" data-lang-key="gallery.title">Photo & Video Gallery</h2>
+                    <h3 class="section-click"> click on photo/video <i class="fa-solid fa-computer-mouse"></i></h3>
+                    <p class="section-subtitle" data-lang-key="gallery.subtitle">Discover the beauty of the yacht inside
+                         and
+                         out</p>
+                    <div class="category-filter">
+                         <button class="filter-button active" data-category="all">All</button>
+                         <button class="filter-button" data-category="exterior"
+                              data-lang-key="gallery.exterior">Exterior</button>
+                         <button class="filter-button" data-category="cabins"
+                              data-lang-key="gallery.cabins">Cabins</button>
+                         <button class="filter-button" data-category="facilities"
+                              data-lang-key="gallery.facilities">Food&More</button>
+                         <button class="filter-button" data-category="videos">Videos</button>
+                    </div>
+                    <div class="image-grid">
+                         <!-- Images and videos will be loaded here by JavaScript -->
+                    </div>
+                    <div class="lightbox" id="lightbox">
+                         <!-- Lightbox content will be created by JavaScript -->
+                    </div>
+               </div>
+          </section>
+
+
+
+          <!-- Trips Section -->
+          <section id="trips" class="trips-section">
+               <div class="container">
+                    <h2 class="section-title" data-lang-key="trip.title">Exceptional Journey</h2>
+                    <p class="section-subtitle" data-lang-key="trip.subtitle">Red Sea - Deep South St. John's</p>
+                    <div class="trip-card">
+                         <div class="card-header">
+                              <h3>Red Sea Adventure</h3>
+                              <p>M/Y Octopus - Luxury Diving Experience</p>
+                         </div>
+                         <div class="card-content">
+                              <div class="trip-details-grid">
+                                   <div class="detail-item">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <h3>Dates</h3>
+                                        <p data-lang-key="trip.dates">November 15 - 22, 2025</p>
+                                   </div>
+                                   <div class="detail-item">
+                                        <i class="fas fa-euro-sign"></i>
+                                        <h3>Price</h3>
+                                        <p data-lang-key="trip.price">1,575 Euro/person</p>
+                                   </div>
+                                   <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <h3>Duration</h3>
+                                        <p data-lang-key="trip.duration">6 nights / 7 days</p>
+                                   </div>
+                                   <div class="detail-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <h3>Location</h3>
+                                        <p>Red Sea, Egypt</p>
+                                   </div>
+                              </div>
+                              <h3 class="package-includes-title" data-lang-key="trip.includes">Package Includes</h3>
+                              <div class="package-items-grid">
+                                   <!-- Package items will be loaded here by JavaScript -->
+                              </div>
+                              <div class="booking-section">
+                                   <h3>Ready for the Adventure?</h3>
+                                   <p>Don't miss this opportunity to explore the amazing Red Sea with abundant marine
+                                        life and
+                                        unique underwater landscapes!</p>
+                                   <div class="booking-details">
+                                        <div class="advance-payment">
+                                             <div class="label">Advance Payment</div>
+                                             <div class="value">600 Euro</div>
+                                             <div class="info">Until 15.06.2025</div>
+                                        </div>
+
+                                        <a href="https://octupus-ship-book.netlify.app/" target="_blank"> <button
+                                                  class="cta-button">send-information </button></a>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </section>
+
+          <!-- Contact Section -->
+          <section id="contact" class="contact-section">
+               <div class="container">
+                    <h2 class="section-title" data-lang-key="contact.title">Contact Us</h2>
+                    <p class="section-subtitle" data-lang-key="contact.subtitle">We're here to help you plan your
+                         perfect
+                         trip</p>
+                    <div class="contact-content">
+                         <div class="contact-info">
+                              <h3>Get in Touch</h3>
+                              <p>Ready to embark on your luxury yacht adventure? </p>
+                              <div class="info-cards">
+                                   <div class="info-card">
+                                        <i class="fas fa-phone"></i>
+                                        <div>
+                                             <h4 data-lang-key="contact.phone">Phone</h4>
+                                             <p>+201287919500</p>
+                                        </div>
+                                   </div>
+                                   <div class="info-card">
+                                        <i class="fas fa-envelope"></i>
+                                        <div>
+                                             <h4 data-lang-key="contact.email">Email</h4>
+                                             <p>octupos-ship@gamil.com</p>
+                                        </div>
+                                   </div>
+                                   <div class="info-card">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <div>
+                                             <h4 data-lang-key="contact.address">Address</h4>
+                                             <p>Red Sea, Egypt</p>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="map-placeholder">
+                                   <i class="fas fa-map-marked-alt"></i>
+                                   <h4>Red Sea Location</h4>
+                                   <p>Our yacht operates in the pristine waters of the Red Sea, offering access to the
+                                        most
+                                        spectacular diving sites in Egypt.</p>
+                              </div>
+                         </div>
+                         <div class="contact-form">
+                              <h3 data-lang-key="contact.sendMessage">Send Message</h3>
+                              <form id="contactForm">
+                                   <div class="form-group">
+                                        <label for="username">Full Name</label>
+                                        <input type="text" id="username" name="username"
+                                             placeholder="Enter your full name" required>
+                                   </div>
+                                   <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" name="email"
+                                             placeholder="Enter your email address" required>
+                                   </div>
+                                   <div class="form-group">
+                                        <label for="phoneNumber">Phone Number</label>
+                                        <input type="tel" id="phoneNumber" name="phoneNumber"
+                                             placeholder="Enter your phone number">
+                                   </div>
+                                   <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea id="message" name="message" rows="5"
+                                             placeholder="Tell us about your diving experience and any special requirements..."
+                                             required></textarea>
+                                   </div>
+                                   <button type="submit" class="submit-button"><i class="fas fa-paper-plane"></i> Send
+                                        Message</button>
+                              </form>
+                         </div>
+                    </div>
+               </div>
+               <script>
+
+                    const contactForm = document.getElementById("contactForm");
+                    if (contactForm) {
+                         contactForm.addEventListener("submit", function (e) {
+                              e.preventDefault();
+
+                              // Get form values
+                              const username = document.getElementById('username').value;
+                              const email = document.getElementById('email').value;
+                              const phoneNumber = document.getElementById('phoneNumber').value;
+                              const message = document.getElementById('message').value;
+                              const timestamp = new Date().toLocaleString();
+
+                              // Create a hidden iframe for form submission
+                              const iframe = document.createElement('iframe');
+                              iframe.name = 'submitFrame';
+                              iframe.style.display = 'none';
+                              document.body.appendChild(iframe);
+
+                              // Create a form inside the iframe
+                              const form = document.createElement('form');
+                              form.method = 'POST';
+                              form.action = 'https://script.google.com/macros/s/AKfycbw0xJSvtenI3l70lTpQnAhrHFoAWqyv4HtgC9i7_S9UZSe0WVZh6wAvBVj7zT1TbMC3/exec'; // Change this URL if needed
+                              form.target = 'submitFrame';
+
+                              // Add form fields with explicit values
+                              const fields = {
+                                   'username': username,
+                                   'email': email,
+                                   'phoneNumber': phoneNumber,
+                                   'message': message,
+                                   'timestamp': timestamp
+                              };
+
+                              for (const [key, value] of Object.entries(fields)) {
+                                   const input = document.createElement('input');
+                                   input.type = 'hidden';
+                                   input.name = key;
+                                   input.value = value;
+                                   form.appendChild(input);
+                              }
+
+                              // Add the form to the iframe and submit
+                              iframe.onload = function () {
+                                   setTimeout(() => {
+                                        document.body.removeChild(iframe);
+                                        alert('Message sent! We will contact you soon.');
+                                        contactForm.reset();
+                                   }, 1000);
+                              };
+                              document.body.appendChild(form); // Must be in DOM for submit in some browsers
+                              form.target = 'submitFrame';
+                              iframe.contentWindow.document.body.appendChild(form);
+                              form.submit();
+                         });
+                    }
+               </script>
+
+          </section>
+     </main>
+
+     <footer class="footer">
+          <div class="container">
+               <div class="footer-content">
+                    <div class="footer-brand">
+                         <i class="fas fa-anchor"></i>
+                         <span>Octopus Ship</span>
+                         <p data-lang-key="footer.description">Octopus Yacht - An unforgettable luxury experience in the
+                              depths of the Red Sea</p>
+                         <div class="social-links">
+                              <a href="https://www.facebook.com/share/1G9BJ5xhCH/?mibextid=wwXIfr" target="_blank"><i
+                                        class="fab fa-facebook-f"></i></a>
+                              <a href="https://www.instagram.com/ramyelbahlwanofficial?igsh=enphdXhvdjdvd2I="
+                                   target="_blank"><i class="fab fa-instagram"></i></a>
+                              <a href="https://wa.me/201282256562" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                         </div>
+                    </div>
+                    <div class="footer-links">
+                         <h4>Quick Links</h4>
+                         <ul>
+                              <li><a href="#home" data-lang-key="nav.home">Home</a></li>
+                              <li><a href="#about" data-lang-key="nav.about">About Yacht</a></li>
+                              <li><a href="#gallery" data-lang-key="nav.gallery">Gallery</a></li>
+                              <li><a href="#trips" data-lang-key="nav.trips">Trips</a></li>
+                              <li><a href="#contact" data-lang-key="nav.contact">Contact</a></li>
+                         </ul>
+                    </div>
+                    <div class="footer-contact">
+                         <h4>Contact Info</h4>
+                         <p>201282256562</p>
+                         <p>https://www.facebook.com/share/1G9BJ5xhCH/?mibextid=wwXIfr</p>
+                    </div>
+               </div>
+               <div class="footer-bottom">
+                    <p>&copy; 2025 Octopus Ship. <span data-lang-key="footer.rights">All rights reserved</span>.</p>
+                    <div class="legal-links">
+                         <a href="#">Privacy Policy</a>
+                         <a href="#">Terms of Service</a>
+                         <a href="#">Cookie Policy</a>
+                    </div>
+               </div>
+          </div>
+     </footer>
+
+</body>
+
+</html>
+
+<script>
+     document.addEventListener("DOMContentLoaded", function () {
+          // Updated images array to include videos
+          const images = [
+               { src: "images/IMG-20250604-WA0204.jpg", category: "exterior", alt: "Octopus Yacht Exterior View", type: "image" },
+               { src: "images/IMG-20250604-WA0202.jpg", category: "exterior", alt: "Yacht with Guests", type: "image" },
+               { src: "images/IMG-20250604-WA0182.jpg", category: "cabins", alt: "Luxury Cabin Interior", type: "image" },
+               { src: "images/IMG-20250604-WA0179.jpg", category: "cabins", alt: "Captain Bridge", type: "image" },
+               { src: "images/IMG-20250604-WA0178.jpg", category: "cabins", alt: "Master Bedroom", type: "image" },
+               { src: "images/IMG-20250604-WA0180.jpg", category: "exterior", alt: "Yacht Side View", type: "image" },
+               { src: "images/IMG-20250604-WA0181.jpg", category: "cabins", alt: "Guest Cabin", type: "image" },
+               { src: "images/IMG-20250604-WA0176.jpg", category: "exterior", alt: "Yacht at Sunset", type: "image" },
+               { src: "images/IMG-20250604-WA0177.jpg", category: "exterior", alt: "Yacht Profile", type: "image" },
+               { src: "images/IMG-20250604-WA0154.jpg", category: "cabins", alt: "Luxury Suite", type: "image" },
+               { src: "/images/WhatsApp Image 2025-08-10 at 22.52.57_b6dc9eaa.jpg", category: "facilities", alt: "foods", type: "image" },
+               { src: "/images/WhatsApp Image 2025-08-10 at 22.52.57_94ac0de9.jpg", category: "cabins", alt: "Luxury Suite", type: "image" },
+               { src: "/images/WhatsApp Image 2025-08-10 at 22.52.57_d08c6086.jpg", category: "facilities", alt: "Chicken", type: "image" },
+               { src: "/images/WhatsApp Image 2025-08-10 at 22.52.57_a7a57b30.jpg", category: "cabins", alt: "main", type: "image" },
+               // Video entries
+               { src: "./videos/WhatsApp Video 2025-08-10 at 22.52.56_1ebda15b.mp4", category: "videos", alt: "Yacht Virtual Tour", type: "video" },
+
+
+          ];
+
+          const imageGrid = document.querySelector(".image-grid");
+          const filterButtons = document.querySelectorAll(".filter-button");
+          const lightbox = document.getElementById("lightbox");
+
+          // Check if required elements exist
+          if (!imageGrid || !lightbox) {
+               console.error("Required gallery elements not found");
+               return;
+          }
+
+          // Create lightbox elements if they don't exist
+          let lightboxContent = lightbox.querySelector(".lightbox-content");
+          let lightboxImage = lightbox.querySelector(".lightbox-image");
+          let lightboxVideo = lightbox.querySelector(".lightbox-video");
+          let closeButton = lightbox.querySelector(".close-button");
+          let prevButton = lightbox.querySelector(".lightbox-nav.prev");
+          let nextButton = lightbox.querySelector(".lightbox-nav.next");
+          let imageAlt = lightbox.querySelector(".image-alt");
+          let imageCount = lightbox.querySelector(".image-count");
+
+          // If lightbox elements don't exist, create them
+          if (!lightboxContent) {
+               lightbox.innerHTML = `
+            <div class="lightbox-content">
+                <img class="lightbox-image" src="" alt="" style="display: none;">
+                <video class="lightbox-video" controls style="display: none;">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="close-button">&times;</button>
+                <button class="lightbox-nav prev">&lt;</button>
+                <button class="lightbox-nav next">&gt;</button>
+                <div class="image-info">
+                    <p class="image-alt"></p>
+                    <p class="image-count"></p>
+                </div>
+            </div>
+        `;
+
+               // Re-select the elements after creating them
+               lightboxContent = lightbox.querySelector(".lightbox-content");
+               lightboxImage = lightbox.querySelector(".lightbox-image");
+               lightboxVideo = lightbox.querySelector(".lightbox-video");
+               closeButton = lightbox.querySelector(".close-button");
+               prevButton = lightbox.querySelector(".lightbox-nav.prev");
+               nextButton = lightbox.querySelector(".lightbox-nav.next");
+               imageAlt = lightbox.querySelector(".image-alt");
+               imageCount = lightbox.querySelector(".image-count");
+          }
+
+          let currentFilteredImages = images;
+          let currentImageIndex = 0;
+
+          function renderImages(filterCategory) {
+               imageGrid.innerHTML = "";
+               currentFilteredImages = images.filter(image => filterCategory === "all" || image.category === filterCategory);
+
+               currentFilteredImages.forEach((item, index) => {
+                    if (item.type === "image") {
+                         const imageItem = document.createElement("div");
+                         imageItem.classList.add("image-item");
+                         imageItem.innerHTML = `
+                    <img src="${item.src}" alt="${item.alt}">
+                    <div class="overlay">
+                        <p class="image-title">${item.alt}</p>
+                    </div>
+                `;
+                         imageItem.addEventListener("click", () => openLightbox(item, index));
+                         imageGrid.appendChild(imageItem);
+                    } else if (item.type === "video") {
+                         const videoItem = document.createElement("div");
+                         videoItem.classList.add("video-item");
+                         videoItem.innerHTML = `
+                    <video preload="metadata">
+                        <source src="${item.src}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay">
+                        <p class="video-title">${item.alt}</p>
+                    </div>
+                    <button class="play-button">
+                        <i class="fas fa-play"></i>
+                    </button>
+                `;
+                         videoItem.addEventListener("click", () => openLightbox(item, index));
+                         imageGrid.appendChild(videoItem);
+                    }
+               });
+          }
+
+          function openLightbox(item, index) {
+               currentImageIndex = index;
+
+               if (item.type === "image") {
+                    lightboxImage.src = item.src;
+                    lightboxImage.alt = item.alt;
+                    lightboxImage.style.display = "block";
+                    lightboxVideo.style.display = "none";
+                    lightboxVideo.pause(); // Pause any playing video
+               } else if (item.type === "video") {
+                    lightboxVideo.querySelector("source").src = item.src;
+                    lightboxVideo.load(); // Reload the video element
+                    lightboxVideo.style.display = "block";
+                    lightboxImage.style.display = "none";
+               }
+
+               imageAlt.textContent = item.alt;
+               imageCount.textContent = `${index + 1} of ${currentFilteredImages.length}`;
+               lightbox.classList.add("active");
+          }
+
+          function closeLightbox() {
+               lightbox.classList.remove("active");
+               // Pause video if it's playing
+               if (lightboxVideo && !lightboxVideo.paused) {
+                    lightboxVideo.pause();
+               }
+          }
+
+          function navigateImage(direction) {
+               if (direction === "next") {
+                    currentImageIndex = (currentImageIndex + 1) % currentFilteredImages.length;
+               } else {
+                    currentImageIndex = (currentImageIndex - 1 + currentFilteredImages.length) % currentFilteredImages.length;
+               }
+               const newItem = currentFilteredImages[currentImageIndex];
+
+               if (newItem.type === "image") {
+                    lightboxImage.src = newItem.src;
+                    lightboxImage.alt = newItem.alt;
+                    lightboxImage.style.display = "block";
+                    lightboxVideo.style.display = "none";
+                    lightboxVideo.pause(); // Pause any playing video
+               } else if (newItem.type === "video") {
+                    lightboxVideo.querySelector("source").src = newItem.src;
+                    lightboxVideo.load(); // Reload the video element
+                    lightboxVideo.style.display = "block";
+                    lightboxImage.style.display = "none";
+               }
+
+               imageAlt.textContent = newItem.alt;
+               imageCount.textContent = `${currentImageIndex + 1} of ${currentFilteredImages.length}`;
+          }
+
+          // Add event listeners
+          filterButtons.forEach(button => {
+               button.addEventListener("click", function () {
+                    filterButtons.forEach(btn => btn.classList.remove("active"));
+                    this.classList.add("active");
+                    renderImages(this.dataset.category);
+               });
+          });
+
+          if (closeButton) {
+               closeButton.addEventListener("click", closeLightbox);
+          }
+
+          if (prevButton) {
+               prevButton.addEventListener("click", () => navigateImage("prev"));
+          }
+
+          if (nextButton) {
+               nextButton.addEventListener("click", () => navigateImage("next"));
+          }
+
+          // Close lightbox when clicking outside the content
+          lightbox.addEventListener("click", (e) => {
+               if (e.target === lightbox) {
+                    closeLightbox();
+               }
+          });
+
+          // Keyboard navigation
+          document.addEventListener("keydown", (e) => {
+               if (!lightbox.classList.contains("active")) return;
+
+               switch (e.key) {
+                    case "Escape":
+                         closeLightbox();
+                         break;
+                    case "ArrowLeft":
+                         navigateImage("prev");
+                         break;
+                    case "ArrowRight":
+                         navigateImage("next");
+                         break;
+               }
+          });
+
+          // Initial render
+          renderImages("all");
+     });
+</script>
+
+<script>
+     document.addEventListener("DOMContentLoaded", function () {
+          // Smooth scrolling for navigation links
+          document.querySelectorAll(".nav-links a").forEach(anchor => {
+               anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                         window.scrollTo({
+                              top: targetElement.offsetTop - document.querySelector(".navbar").offsetHeight,
+                              behavior: "smooth"
+                         });
+                    }
+               });
+          });
+
+          // Mobile menu toggle
+          const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
+          const navLinks = document.querySelector(".nav-links");
+
+          mobileMenuIcon.addEventListener("click", function () {
+               navLinks.classList.toggle("active");
+          });
+
+          // Close mobile menu when a link is clicked
+          navLinks.querySelectorAll("a").forEach(link => {
+               link.addEventListener("click", function () {
+                    navLinks.classList.remove("active");
+               });
+          });
+
+          // Form submission handling
+          const contactForm = document.getElementById("contactForm");
+          if (contactForm) {
+               contactForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    alert("Message sent! We will contact you soon.");
+                    contactForm.reset();
+               });
+          }
+
+          // Update navbar on scroll
+          window.addEventListener("scroll", function () {
+               const navbar = document.getElementById("navbar");
+               if (window.scrollY > 50) {
+                    navbar.classList.add("scrolled");
+               } else {
+                    navbar.classList.remove("scrolled");
+               }
+          });
+
+          // Language switching functionality
+          const langButtons = document.querySelectorAll('[data-lang]');
+          const langDropdown = document.querySelector('.lang-dropdown');
+          const langButton = document.querySelector('.lang-button');
+
+          // Toggle dropdown
+          if (langButton) {
+               langButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    langDropdown.classList.toggle('active');
+               });
+          }
+
+          // Close dropdown when clicking outside
+          document.addEventListener('click', function () {
+               if (langDropdown) {
+                    langDropdown.classList.remove('active');
+               }
+          });
+
+          // Language data
+          const translations = {
+               en: {
+                    'nav.home': 'Home',
+                    'nav.about': 'About Yacht',
+                    'nav.gallery': 'Gallery',
+                    'nav.trips': 'Trips',
+                    'nav.contact': 'Contact',
+                    'hero.title': 'Discover the Red Sea World',
+                    'hero.subtitle': 'With Octopus Luxury Yacht',
+                    'hero.description': 'Embark on an unforgettable adventure with luxury diving trips in the depths of the Red Sea',
+                    'yacht.title': 'Octopus Yacht',
+                    'yacht.subtitle': 'Where Luxury Meets Adventure',
+                    'yacht.description': '5-star luxury yacht with 5 decks, equipped with the latest technology to ensure your comfort and safety',
+                    'yacht.features.luxury': 'Exceptional Luxury',
+                    'yacht.features.safety': 'Safety & Security',
+                    'yacht.features.comfort': 'Ultimate Comfort',
+                    'yacht.features.adventure': 'Thrilling Adventure',
+                    'gallery.title': 'Photo Gallery',
+                    'gallery.subtitle': 'Discover the beauty of the yacht inside and out',
+                    'gallery.exterior': 'Exterior',
+                    'gallery.cabins': 'Cabins',
+                    'gallery.facilities': 'Food&More',
+                    'trip.title': 'Exceptional Journey',
+                    'trip.subtitle': 'Red Sea - Deep South St. John\'s',
+                    'trip.dates': 'November 15 - 22, 2025',
+                    'trip.price': '1,575 Euro/person',
+                    'trip.duration': '6 nights / 7 days',
+                    'trip.includes': 'Package Includes',
+                    'contact.title': 'Contact Us',
+                    'contact.subtitle': 'We\'re here to help you plan your perfect trip',
+                    'contact.phone': 'Phone',
+                    'contact.email': 'Email',
+                    'contact.address': 'Address',
+                    'contact.sendMessage': 'Send Message',
+                    'footer.description': 'Octopus Yacht - An unforgettable luxury experience in the depths of the Red Sea',
+                    'footer.rights': 'All rights reserved'
+               },
+               ar: {
+                    'nav.home': 'الرئيسية',
+                    'nav.about': 'عن اليخت',
+                    'nav.gallery': 'المعرض',
+                    'nav.trips': 'الرحلات',
+                    'nav.contact': 'اتصل بنا',
+                    'hero.title': 'اكتشف عالم البحر الأحمر',
+                    'hero.subtitle': 'مع يخت الأخطبوط الفاخر',
+                    'hero.description': 'انطلق في مغامرة لا تُنسى مع رحلات الغوص الفاخرة في أعماق البحر الأحمر',
+                    'yacht.title': 'يخت الأخطبوط',
+                    'yacht.subtitle': 'حيث تلتقي الفخامة بالمغامرة',
+                    'yacht.description': 'يخت فاخر 5 نجوم مع 5 طوابق، مجهز بأحدث التقنيات لضمان راحتك وأمانك',
+                    'yacht.features.luxury': 'فخامة استثنائية',
+                    'yacht.features.safety': 'الأمان والحماية',
+                    'yacht.features.comfort': 'راحة مطلقة',
+                    'yacht.features.adventure': 'مغامرة مثيرة',
+                    'gallery.title': 'معرض الصور',
+                    'gallery.subtitle': 'اكتشف جمال اليخت من الداخل والخارج',
+                    'gallery.exterior': 'الخارج',
+                    'gallery.cabins': 'الكبائن',
+                    'gallery.facilities': 'الطعام والمزيد',
+                    'trip.title': 'رحلة استثنائية',
+                    'trip.subtitle': 'البحر الأحمر - جنوب سانت جونز العميق',
+                    'trip.dates': '15 - 22 نوفمبر 2025',
+                    'trip.price': '1,575 يورو/شخص',
+                    'trip.duration': '6 ليالي / 7 أيام',
+                    'trip.includes': 'تشمل الباقة',
+                    'contact.title': 'اتصل بنا',
+                    'contact.subtitle': 'نحن هنا لمساعدتك في التخطيط لرحلتك المثالية',
+                    'contact.phone': 'الهاتف',
+                    'contact.email': 'البريد الإلكتروني',
+                    'contact.address': 'العنوان',
+                    'contact.sendMessage': 'إرسال رسالة',
+                    'footer.description': 'يخت الأخطبوط - تجربة فاخرة لا تُنسى في أعماق البحر الأحمر',
+                    'footer.rights': 'جميع الحقوق محفوظة'
+               }
+          };
+
+          // Function to change language
+          function changeLanguage(lang) {
+               const elements = document.querySelectorAll('[data-lang-key]');
+               elements.forEach(element => {
+                    const key = element.getAttribute('data-lang-key');
+                    if (translations[lang] && translations[lang][key]) {
+                         element.textContent = translations[lang][key];
+                    }
+               });
+
+               // Update language button text
+               const langNames = {
+                    'en': 'English',
+                    'ar': 'العربية',
+                    'es': 'Español',
+                    'fr': 'Français',
+                    'it': 'Italiano'
+               };
+
+               if (langButton && langNames[lang]) {
+                    langButton.textContent = langNames[lang];
+               }
+
+               // Update document direction for Arabic
+               if (lang === 'ar') {
+                    document.documentElement.setAttribute('dir', 'rtl');
+                    document.documentElement.setAttribute('lang', 'ar');
+               } else {
+                    document.documentElement.setAttribute('dir', 'ltr');
+                    document.documentElement.setAttribute('lang', lang);
+               }
+
+               // Close dropdown
+               if (langDropdown) {
+                    langDropdown.classList.remove('active');
+               }
+
+               // Store language preference
+               localStorage.setItem('selectedLanguage', lang);
+          }
+
+          // Add click event listeners to language buttons
+          langButtons.forEach(button => {
+               button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    changeLanguage(lang);
+               });
+          });
+
+          // Load saved language or default to English
+          const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+          changeLanguage(savedLanguage);
+
+          // Package items data
+          const packageItems = [
+               { icon: 'fas fa-bed', text: 'Luxury accommodation on board' },
+               { icon: 'fas fa-utensils', text: 'All meals and beverages' },
+               { icon: 'fas fa-swimming-pool', text: 'Unlimited diving' },
+               { icon: 'fas fa-ship', text: 'Professional diving guide' },
+               { icon: 'fas fa-life-ring', text: 'All diving equipment' },
+               { icon: 'fas fa-wifi', text: 'Free Wi-Fi' }
+          ];
+
+          // Render package items
+          const packageGrid = document.querySelector('.package-items-grid');
+          if (packageGrid) {
+               packageGrid.innerHTML = packageItems.map(item => `
+            <div class="package-item">
+                <i class="${item.icon}"></i>
+                <span>${item.text}</span>
+            </div>
+        `).join('');
+          }
+     });
+</script>
